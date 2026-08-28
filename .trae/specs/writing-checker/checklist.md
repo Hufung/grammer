@@ -1,0 +1,22 @@
+# Verification Checklist
+
+- [x] `npm install` succeeds without errors
+- [x] `docker-compose up -d` starts LanguageTool on port 8010
+- [x] `npm start` starts the Express server on localhost
+- [x] Web UI loads at `http://localhost:3000` (or configured port)
+- [x] Pasting text and clicking "Check" returns grammar issues from local LanguageTool
+- [x] Issues are underlined in the displayed text with hover tooltips showing explanations
+- [x] Clicking a suggestion applies the replacement to the text
+- [x] `dictionary.txt` words are not flagged by LanguageTool
+- [x] LLM rewrite pane shows three buttons: tighten, friendlier, formal
+- [x] Clicking a rewrite button shows a diff view (original vs. rewrite)
+- [x] Accepting a rewrite replaces the original text; rejecting discards it
+- [x] When `LLM_API_KEY` is not set, the rewrite pane is disabled with a clear message
+- [x] `node bin/check.js test.md` prints issues with line numbers and exits 1 when issues exist
+- [x] `node bin/check.js clean.md` prints success and exits 0
+- [x] CLI supports reading from stdin (piping)
+- [x] No telemetry, no external accounts required for core grammar checking
+- [x] Grammar checks never leave the machine (only local LanguageTool API is called)
+- [x] README documents Docker setup, RAM requirements (~1 GB), LLM key location, and CLI usage
+- [x] `.env.example` exists with `LLM_API_KEY=` placeholder
+- [x] `.gitignore` excludes `node_modules` and `.env`

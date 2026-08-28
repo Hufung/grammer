@@ -1,0 +1,19 @@
+{
+  "name": "write-check",
+  "version": "1.0.0",
+  "description": "Local writing checker powered by LanguageTool + optional LLM rewrite",
+  "main": "server.js",
+  "bin": {
+    "writecheck": "./bin/writecheck.js"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "check": "node bin/writecheck.js"
+  },
+  "dependencies": {
+    "diff": "^7.0.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.0",
+    "open": "^10.1.0"
+  }
+}

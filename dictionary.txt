@@ -1,0 +1,3 @@
+# Personal dictionary — one word per line
+# These words will never be flagged by the grammar checker
+# Add names, jargon, brand terms, etc.

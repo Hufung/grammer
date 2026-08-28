@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writing Checker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Writing Checker</h1>
+      <p class="subtitle">Local grammar check &amp; optional LLM rewrite</p>
+    </header>
+
+    <main>
+      <section class="editor-section">
+        <div class="toolbar">
+          <button id="btn-check" class="btn btn-primary">Check Grammar</button>
+          <span id="status" class="status"></span>
+        </div>
+        <div class="editor-wrap">
+          <textarea id="input" placeholder="Paste or type your text here…" spellcheck="false"></textarea>
+          <div id="overlay" class="overlay"></div>
+        </div>
+      </section>
+
+      <section id="issues-section" class="issues-section" hidden>
+        <h2>Issues <span id="issue-count" class="badge"></span></h2>
+        <ul id="issues-list"></ul>
+      </section>
+
+      <section id="rewrite-section" class="rewrite-section">
+        <h2>LLM Rewrite</h2>
+        <div id="rewrite-disabled" class="notice" hidden>
+          Set <code>LLM_API_KEY</code> in <code>.env</code> to enable rewrites.
+        </div>
+        <div id="rewrite-controls">
+          <div class="rewrite-buttons">
+            <button data-mode="tighten" class="btn">Tighten</button>
+            <button data-mode="friendlier" class="btn">Friendlier</button>
+            <button data-mode="formal" class="btn">Formal</button>
+          </div>
+          <div id="rewrite-status" class="status"></div>
+        </div>
+      </section>
+
+      <section id="diff-section" class="diff-section" hidden>
+        <h2>Diff Preview</h2>
+        <div id="diff-output" class="diff-output"></div>
+        <div class="diff-actions">
+          <button id="btn-accept" class="btn btn-primary">Accept</button>
+          <button id="btn-reject" class="btn btn-secondary">Reject</button>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
